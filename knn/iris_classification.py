@@ -1,9 +1,12 @@
+import sys
+import os
 import argparse
 import numpy as np
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from knn import KNN
-from ..utils import accuracy
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from utils.metrics import accuracy
 
 
 def main():
@@ -28,12 +31,15 @@ def main():
     print("📥 데이터셋 로드 중...")
     iris = datasets.load_iris()
     X, y = iris.data, iris.target
+    print(f"✅ 데이터 로드 완료! 데이터 크기: X={X.shape}, y={y.shape}")
 
     # 데이터셋 분할
     print("📊 데이터셋 분할 중...")
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=args.test_size, random_state=args.random_state
     )
+    print(f"✅ 데이터 분할 완료! 훈련 데이터 크기: X_train={X_train.shape}, y_train={y_train.shape}")
+    print(f"✅ 테스트 데이터 크기: X_test={X_test.shape}, y_test={y_test.shape}")
 
     # k-NN 모델 생성 및 학습
     print(f"🔧 k-NN 모델 생성 중... (k={args.k}, metric={args.metric})")
