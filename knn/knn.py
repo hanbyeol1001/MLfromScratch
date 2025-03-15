@@ -4,7 +4,7 @@ from distance import euclidean_distance, manhattan_distance, cosine_similarity
 
 
 class KNN:
-    """
+    '''
     k-NN (k-Nearest Neighbors) 알고리즘을 구현한 클래스
 
     summary:
@@ -14,9 +14,9 @@ class KNN:
     args:
         k (int): 최근접 이웃 개수 (기본값: 3)
         metric (str): 거리 측정 방법 ('euclidean', 'manhattan', 'cosine' 중 선택, 기본값: 'euclidean')
-    """
+    '''
     def __init__(self, k=3, metric="euclidean"):
-        """
+        '''
         KNN 모델을 초기화.
 
         args:
@@ -25,13 +25,13 @@ class KNN:
 
         raises:
             ValueError: 지원하지 않는 거리 측정 방법이 입력되었을 경우 발생
-        """
+        '''
         self.k = k
         self.metric = metric
         self.distance_func = self._get_distance_function(metric)
 
     def _get_distance_function(self, metric):
-        """
+        '''
         거리 측정 방법을 설정.
 
         args:
@@ -42,7 +42,7 @@ class KNN:
 
         raises:
             ValueError: 지원하지 않는 거리 측정 방법이 입력된 경우 발생
-        """
+        '''
         if metric == "euclidean":
             return euclidean_distance
         elif metric == "manhattan":
@@ -54,7 +54,7 @@ class KNN:
             raise ValueError("지원하지 않는 거리 측정 방법입니다. (euclidean, manhattan, cosine 중 선택)")
 
     def fit(self, X, y):
-        """
+        '''
         훈련 데이터를 저장.
 
         args:
@@ -63,12 +63,12 @@ class KNN:
 
         return:
             None
-        """
+        '''
         self.X_train = X
         self.y_train = y
 
     def predict(self, X):
-        """
+        '''
         입력 데이터 X에 대한 예측을 수행.
 
         args:
@@ -76,12 +76,12 @@ class KNN:
 
         return:
             numpy.ndarray: 예측된 클래스 배열
-        """
+        '''
         y_pred = [self._predict(x) for x in X]
         return np.array(y_pred)
 
     def _predict(self, x):
-        """
+        '''
         단일 샘플 x에 대한 예측을 수행.
 
         args:
@@ -89,7 +89,7 @@ class KNN:
 
         return:
             int or float: 예측된 클래스 또는 회귀값
-        """
+        '''
         # 모든 훈련 데이터와의 거리 계산
         distances = [self.distance_func(x, x_train) for x_train in self.X_train]
 

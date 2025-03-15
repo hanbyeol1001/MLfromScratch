@@ -7,9 +7,9 @@ from ..utils import accuracy
 
 
 def main():
-    """
+    '''
     터미널에서 입력을 받아 k-NN 분류를 수행하는 메인 함수
-    """
+    '''
     # Argument Parser 설정
     parser = argparse.ArgumentParser(description="k-NN 분류 모델 실행")
     parser.add_argument("--k", type=int, default=3, help="최근접 이웃 개수 (기본값: 3)")
