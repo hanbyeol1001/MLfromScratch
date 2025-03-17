@@ -1,5 +1,6 @@
+import os
+import sys
 import numpy as np
-from ..utils.metrics import r2_score, adjusted_r2_score
 
 
 class LinearRegression:
