@@ -31,7 +31,7 @@ def main():
     print("📥 데이터셋 로드 중...")
     iris = datasets.load_iris()
     X, y = iris.data, iris.target
-    print(f"✅ 데이터 로드 완료! 데이터 크기: X={X.shape}, y={y.shape}")
+    print(f"✅ 데이터 로드 완료! 데이터 크기: X={X.shape}, y={y.shape}\n")
 
     # 데이터셋 분할
     print("📊 데이터셋 분할 중...")
@@ -39,7 +39,7 @@ def main():
         X, y, test_size=args.test_size, random_state=args.random_state
     )
     print(f"✅ 데이터 분할 완료! 훈련 데이터 크기: X_train={X_train.shape}, y_train={y_train.shape}")
-    print(f"✅ 테스트 데이터 크기: X_test={X_test.shape}, y_test={y_test.shape}")
+    print(f"✅ 테스트 데이터 크기: X_test={X_test.shape}, y_test={y_test.shape}\n")
 
     # k-NN 모델 생성 및 학습
     print(f"🔧 k-NN 모델 생성 중... (k={args.k}, metric={args.metric})")
@@ -50,7 +50,7 @@ def main():
     predictions = clf.predict(X_test)
 
     # 정확도 출력
-    print("✅ 예측 완료!")
+    print("✅ 예측 완료!\n")
     acc = accuracy(y_test, predictions)
     print(f"KNN classification accuracy: {acc:.4f}")
 
