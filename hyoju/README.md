@@ -1,4 +1,18 @@
-# MLfromScratch
-Machine Learning algorithm implementations from scratch.
+# MachineLearning
 
-리드미는 자유롭게 작성.
+From __MLfromscratch__ <https://github.com/patrickloeber/MLfromscratch>
+
+
+### Algorithms Implemented
+- KNN
+- Linear Regression
+- Logistic Regression
+- Naive Bayes
+- Perceptron
+- SVM
+- Decision Tree
+- Random Forest
+- Principal Component Analysis (PCA)
+- K-Means
+- AdaBoost
+- Linear Discriminant Analysis (LDA)
